@@ -1,25 +1,12 @@
 $LOAD_PATH.push('.')
 require 'lib/hoge'
 
-describe Ahoaho do
-  before do
-     @name = []
+describe Ahoaho ,"のテスト" do
+  context '' 
+  it "huga は空ではない" do
+    expect('abc').not_to be_empty
   end
- 
-  it "should be empty" do
-    @name.should be_empty
-  end
-
-  it "should size 0" do
-    @name.size.should == 0
-  end
-
-  it 'a.huga は Hello Rspec と表示される' do
-    a = Ahoaho.new("Hello Rspec")
-    a.huga == "Hello Rspec"
-  end 
-
-  after do
-    @hoge = nil
+  it "huga に Hello が含まれる" do
+    expect('Hello').to match(/Hello/)
   end
 end

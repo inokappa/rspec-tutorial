@@ -1,13 +1,10 @@
 #!/usr/bin/env ruby
 
 class Ahoaho
-  def initialize(hoge)
-    @name = hoge
-  end
-  def huga
-    puts (@name)
+  def huga(str)
+    puts (str)
   end
 end
 
-a = Ahoaho.new("Hello Rspec")
-a.huga
+a = Ahoaho.new()
+a.huga("Hello Rspec")
