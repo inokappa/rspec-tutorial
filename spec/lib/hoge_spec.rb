@@ -1,17 +1,23 @@
 $LOAD_PATH.push('.')
 require 'lib/hoge'
 
-describe Hoge do
+describe Ahoaho do
   before do
-     @hoge = []
+     @name = []
   end
  
   it "should be empty" do
-    @hoge.should be_empty
+    @name.should be_empty
   end
+
   it "should size 0" do
-    @hoge.size.should == 0
+    @name.size.should == 0
   end
+
+  it 'a.huga は Hello Rspec と表示される' do
+    a = Ahoaho.new("Hello Rspec")
+    a.huga == "Hello Rspec"
+  end 
 
   after do
     @hoge = nil
