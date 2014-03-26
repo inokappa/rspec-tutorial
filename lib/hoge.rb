@@ -1,9 +1,11 @@
 class Hoge
   def initialize(hoge)
-    @hoge = hello
+    @hoge = ""
   end
   def hello_hoge 
-    puts "hello rspec"
-    puts "hello rspec"
+    puts (@hoge)
   end
 end
+
+hoge = Hoge.new("Hello Travis")
+hoge.hello_hoge
