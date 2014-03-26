@@ -4,5 +4,6 @@ class Hoge
   end
   def hello_hoge 
     puts "hello rspec"
+    puts "hello rspec"
   end
 end
