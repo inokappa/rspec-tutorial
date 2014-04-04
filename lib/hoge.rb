@@ -1,10 +1,8 @@
-#!/usr/bin/env ruby
-
-class Ahoaho
-  def huga(str)
-    puts (str)
+class MessageFilter
+  def initialize(str)
+    @str = str
+  end
+  def detect?(text)
+    text.include?(@str)
   end
 end
-
-a = Ahoaho.new()
-a.huga("Hello Rspec")
