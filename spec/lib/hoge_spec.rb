@@ -5,7 +5,7 @@ describe Client do
   describe '#initialize' do
     context '引数 uri が設定されている場合' do
       before do
-        @uri = '/path/to/uri'
+        @uri = 'unix:///var/lib/lxd/unix.socket'
       end
       it '引数は String である' do
         expect(@uri).to be_a_kind_of(String)
@@ -21,7 +21,7 @@ describe Client do
   describe '#client' do
     context '引数 uri が設定されている場合' do
       before do
-        @uri = '/path/to/uri'
+        @uri = 'unix:///var/lib/lxd/unix.socket'
       end
       it 'object が生成される' do
         c = Client.new(@uri)
@@ -33,7 +33,7 @@ describe Client do
   describe '#list_containers' do
     context '引数 uri が正しく設定されている場合' do
       before do
-        uri = '/pat/to/uri'
+        uri = 'unix:///var/lib/lxd/unix.socket'
         @res = '{"type":"sync","status":"Success","status_code":200,"metadata":["/1.0/containers/test01"],"operation":""}'
         @c = Client.new(uri)
         allow(@c).to receive(:list_containers).and_return(@res)
