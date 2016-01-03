@@ -38,9 +38,10 @@ describe Client do
         @c = Client.new(uri)
         allow(@c).to receive(:list_containers).and_return(@res)
       end
-      it 'コンテナ一覧が String で取得出来る' do
-        expect(@c.list_containers).to be_a_kind_of(String)
-      end
+      #it 'コンテナ一覧が String で取得出来る' do
+      #  expect(@c.list_containers).to be_a_kind_of(String)
+      #end
+
       it 'コンテナ一覧が取得出来る' do
         response = @c.list_containers
         expect(response).to eq @res
