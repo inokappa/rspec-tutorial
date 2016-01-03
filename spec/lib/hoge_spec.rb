@@ -42,6 +42,13 @@ describe Client do
       #  expect(@c.list_containers).to be_a_kind_of(String)
       #end
 
+      before do
+        uri = 'unix:///var/lib/lxd/unix.socket'
+        # @res = '{"type":"sync","status":"Success","status_code":200,"metadata":["/1.0/containers/test01"],"operation":""}'
+        @c = Client.new(uri)
+        allow(@c).to receive(:list_containers).and_return(@res)
+      end
+
       it 'コンテナ一覧が取得出来る' do
         response = @c.list_containers
         expect(response).to eq @res
