@@ -7,7 +7,7 @@ describe Client do
       before do
         @uri = '/path/to/uri'
       end
-      it '引数は文字列である' do
+      it '引数は String である' do
         expect(@uri).to be_a_kind_of(String)
       end
     end
@@ -28,21 +28,9 @@ describe Client do
         expect(c.client).to be_a_kind_of(Object)
       end
     end
-
-    context '引数 uri が設定されていない場合' do
-      before do
-        @uri = ''
-      end
-      it 'object が生成される' do
-        c = Client.new(@uri)
-        expect(c.client).to be_a_kind_of(Object)
-      end
-    end
-
   end
 
   describe '#list_containers' do
-
     context '引数 uri が正しく設定されている場合' do
       before do
         uri = '/pat/to/uri'
@@ -58,16 +46,5 @@ describe Client do
         expect(response).to eq @res
       end
     end
-
-    context '引数 uri が設定されていない場合' do
-      before do
-        @uri = ''
-      end
-      it 'URI エラーとなる' do
-        c = Client.new(@uri)
-        expect{c.list_containers}.to raise_error(URI::InvalidURIError)
-      end
-    end
-
   end
 end
